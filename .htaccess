@@ -1,0 +1,6 @@
+# Mobile device detection and redirect
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} "android|blackberry|ipad|iphone|ipod|iemobile|opera mobile|palmos|webos|googlebot-mobile" [NC]
+RewriteCond %{HTTP_HOST} !^m\. [NC]
+RewriteCond %{HTTP_HOST} ^(www\.)?plazapits\.com [NC]
+RewriteRule ^(.*)$ https://m.plazapits.com/$1 [L,R=302]

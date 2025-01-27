@@ -1,0 +1,759 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: #000000;
+    background-image: url(./assets/images/6027.jpg);
+    background-size: cover; /* Adjusts the image to cover the screen */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    background-position: center; /* Centers the image */
+}
+
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main-container,
+.main-container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.main-container {
+  position: relative;
+  width: 1440px;
+  height: 1749px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.flex-row {
+  display: flex;
+  position: relative;
+  width: 953px;
+  height: 301px;
+  margin: 0px 0 0 25px;
+  z-index: 6;
+}
+
+.logo-container {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Vertically align the logo and text */
+  justify-content: start; /* Ensure logo is on the left */
+  gap: 15px; /* Space between logo and text */
+}
+
+.pits-logo-removebg {
+  position: static;
+  width: 429.3px;
+  height: 250.2px;
+  background: url(./assets/images/e27bdcd0b67c84811c1fcde6d4a08c4e2a6a4e02.png)
+    no-repeat center;
+  background-size: cover;
+}
+
+
+
+.logo-text {
+  font-size: 128px; /* Adjust the text size */
+  font-weight: normal; /* Bold text */
+  color: #ffffff; /* Text color */
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-align: justify;   
+  margin-bottom: 20px;
+  font-family: Saira Stencil One, var(--default-font-family);
+}
+
+.login {
+  position: static;
+  width: 54px;
+  height: 52px;
+  top: 0;
+  left: 899px;
+  background: url(./assets/images/2b971374-56aa-48e0-9f6d-f784a368f755.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 5;
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+.login:hover {
+  transform: scale(1.1); /* Grows the logo towards the viewer */
+  opacity: 1;
+  filter: brightness(1.2);
+}
+
+.sign-up-log-in {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: static;
+  margin: 0px 0 0 25px;
+  width: 112px;
+  height: 51px;
+  top: 1px;
+  left: 800px;
+  color: #ffffff;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.184px;
+  text-align: right;
+  letter-spacing: 1.6px;
+  z-index: 6;
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+/*.sign-up-log-in:hover {
+  transform: scale(1.1); /* Grows the logo towards the viewer
+  opacity: 1;
+  filter: brightness(1.2);
+}*/
+
+.pits-carwash-logo {
+  position: relative;
+  width: 350.3912px;
+  height: 222.4px;
+  margin: 65px 0 0 546.2px;
+  background: url(./assets/images/57f2f657b27937e08e248c6b9bbdaefaecac5689.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 3;
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+  transform-origin: center;
+}
+
+.pits-carwash-logo:hover {
+  transform: scale(1.1); /* Grows the logo towards the viewer */
+  opacity: 1;
+  filter: brightness(1.2);
+}
+
+.car-wash-detailing {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 214px;
+  height: 42px;
+  margin: 0 0 0 613px;
+  color: #fdfdff;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 29.045px;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 1.44px;
+  z-index: 4;
+}
+
+.rectangle {
+  position: relative;
+  width: 1440px;
+  height: auto;
+  margin: 31px 0 0 0;
+  background: #000000;
+  z-index: 7;
+}
+
+.flex-row-ddf {
+  position: relative;
+  width: 1440px;
+  height: 688px;
+  margin: 0 0 0 0;
+  z-index: 9;
+}
+
+.rectangle-1 {
+  position: absolute;
+  width: 1440px;
+  height: 355px;
+  top: 0;
+  left: 0;
+  background: #000000;
+  z-index: 8;
+}
+
+.rectangle-2 {
+  position: absolute;
+  font-family: Saira Stencil One, var(--default-font-family);
+  width: 1440px;
+  height: 355px;
+  top: 333px;
+  left: 0;
+  font-size: 0px;
+  background: #000000;
+  z-index: 9;
+}
+
+.ubicacion {
+  display: block;
+  position: relative;
+  height: 42px;
+  margin: 24px 0 0 39px;
+  color: #880808;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 38.727px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 1.92px;
+  z-index: 10;
+}
+
+.flex-row-ea {
+  position: relative;
+  width: 532px;
+  height: 61px;
+  margin: 45px 0 0 39px;
+  z-index: 13;
+}
+
+.primary {
+  position: absolute;
+  width: 15px;
+  height: 19.948px;
+  top: 50%;
+  left: 50%;
+  background: url(./assets/images/2835b572-68e5-47ec-b0d9-2cb3b1234870.png)
+    no-repeat center;
+  background-size: cover;
+  transform: translate(-1773.33%, -152.9%);
+  z-index: 12;
+}
+
+.costa-del-este {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 489px;
+  height: 61px;
+  top: 0;
+  left: 43px;
+  color: #ffffff;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 24.205px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  z-index: 13;
+}
+
+.text-5 {
+  display: block;
+  position: relative;
+  height: 42px;
+  margin: 24px 0 0 39px;
+  color: #880808;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 38.727px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 1.92px;
+  z-index: 11;
+}
+
+.text-6 {
+  display: block;
+  position: relative;
+  height: 11px;
+  margin: 24px 0 0 82px;
+  color: #ffffff;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 11px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.96px;
+  z-index: 17;
+}
+
+.pic-3 {
+  position: relative;
+  width: 17.5px;
+  height: 17.5px;
+  margin: -10px 0 0 47px;
+  background: url(./assets/images/270a25fd-7f2e-4818-9315-866a0bc6b0d5.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 14;
+}
+
+.text-7 {
+  display: block;
+  position: relative;
+  height: 11px;
+  margin: 24px 0 0 82px;
+  color: #ffffff;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 11px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.96px;
+  z-index: 16;
+}
+
+.pic-4 {
+  position: relative;
+  width: 17.5px;
+  height: 17.5px;
+  margin: -10px 0 0 47px;
+  background: url(./assets/images/fdd1a726-7ffc-476b-a3e4-4ca50e31c1be.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 15;
+}
+
+.rectangle-3 {
+  position: absolute;
+  width: 1440px;
+  height: 355px;
+  top: 0;
+  left: 0;
+  background: url(./assets/images/95b8ff7d-0a28-4502-a75c-a30ae45c2186.png)
+    no-repeat center;
+  background-size: cover;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+}
+
+.carwash-bg {
+  position: absolute;
+  width: 1440px;
+  height: 351px;
+  top: 355px;
+  left: 0;
+  background: url(./assets/images/c9cf309c-b311-4317-a3a6-e90e859c63ab.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.gallery-section {
+  width: 100%;
+  min-height: 40vh; /* Reduced from 100vh */
+  background: #000000;
+  position: relative;
+  overflow: auto;
+}
+
+.gallery-title {
+  font-family: Saira Stencil One, var(--default-font-family);
+  text-align: center;
+  margin-bottom: auto;
+  color: #cf0029;
+}
+
+.gallery-title h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  font-family: Saira Stencil One, var(--default-font-family);
+  letter-spacing: 2px;
+}
+
+.gallery-showcase {
+  max-width: 800px; /* Reduced from 1200px */
+  margin: 0 auto;
+  position: relative;
+}
+
+.gallery-main {
+  width: 100%;
+  max-width: 600px; /* Added max-width */
+  height: 337.5px; /* 16:9 aspect ratio for 600px width */
+  margin: 0 auto;
+  position: relative;
+  overflow: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
+}
+
+.gallery-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.gallery-container img.active {
+  opacity: 1;
+}
+
+.gallery-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: #ff0000;
+  transition: width 0.3s linear;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0.5rem 0;
+  max-width: 600px; /* Match gallery-main max-width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnail {
+  width: 80px; /* Reduced from 100px */
+  height: 45px; /* Reduced from 60px */
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thumbnail.active {
+  border-color: #ff0000;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+      padding: 1.5rem 1rem;
+  }
+
+  .gallery-main {
+      max-width: 100%;
+      height: 56.25vw; /* Maintain 16:9 aspect ratio */
+  }
+
+  .gallery-title h3 {
+      font-size: 1.5rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .gallery-section {
+      padding: 1rem;
+  }
+
+  .thumbnail {
+      width: 50px;
+      height: 28px;
+  }
+}
+
+.racing-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.race-btn {
+  position: relative;
+  padding: 5em 2.5em;
+  margin-bottom: 50%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Saira Stencil One, var(--default-font-family);
+  letter-spacing: 2px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  overflow: auto;
+}
+
+.btn-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+.btn-line {
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background-color: #ff0000;
+  transition: all 0.3s ease;
+}
+
+.btn-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: 12px;
+  height: 2px;
+  background-color: #ff0000;
+  transition: all 0.3s ease;
+}
+
+.race-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.race-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ff0000, transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+/* Button-specific styles */
+.services-btn .btn-line {
+  width: 20px;
+}
+
+.booking-btn .btn-line {
+  width: 28px;
+}
+
+.contact-btn .btn-line {
+  width: 24px;
+}
+
+/* Hover effects */
+.race-btn:hover {
+  color: #ff0000;
+}
+
+.race-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.race-btn:hover::after {
+  transform: scaleX(1);
+}
+
+.race-btn:hover .btn-line {
+  transform: translateX(5px);
+  background-color: #ff0000;
+}
+
+.race-btn:hover .btn-line::before {
+  transform: translateX(-3px);
+  width: 16px;
+}
+
+/* Active state */
+.race-btn:active {
+  transform: scale(0.98);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .racing-buttons {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  .race-btn {
+      font-size: 14px;
+      padding: 0.7em 1.6em;
+  }
+}
+
+/* Dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+  .race-btn {
+      color: #ffffff;
+  }
+  
+  .race-btn:hover {
+      color: #ff0000;
+  }
+}
+
+.map-div {
+  float: right;
+
+  /* Add spacing as needed */
+  margin: 5%;
+  margin-top: auto;
+  
+  /* Control map size */
+  width: max-content;
+  height: max-content;
+}
+
+.content-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  width: 100%;
+  height: auto;
+  min-height: fit-content;
+  position: relative;
+}
+
+@media (max-width: 480px) {
+
+  .pits-logo-removebg {
+    width: 100%; /* Make logo responsive */
+    height: auto;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .flex-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-text {
+    font-size: 64px; /* Adjust the text size for smaller screens */
+    text-align: center; /* Center the text */
+    margin-bottom: 10px;
+  }
+
+  .login {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pits-logo-removebg {
+    width: 100%;
+    height: auto;
+  }
+
+  .logo-text {
+    font-size: 64px; /* Adjust the text size for smaller screens */
+    text-align: center; /* Center the text */
+    margin-bottom: 10px;
+  }
+
+  .login {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sign-up-log-in {
+    font-size: 14px; /* Adjust the font size */
+  }
+
+  .car-wash-detailing {
+    font-size: 18px; /* Adjust the font size */
+  }
+
+  .rectangle {
+    padding: 10px; /* Adjust padding */
+  }
+
+  .gallery-title h3 {
+    font-size: 24px; /* Adjust the gallery title size */
+  }
+
+  .race-btn {
+    width: 100%; /* Make buttons full width */
+    margin-bottom: 10px; /* Add space between buttons */
+  }
+
+  .map-div iframe {
+    width: 100%; /* Make map full width */
+    height: 200px; /* Adjust height */
+  }
+
+  .ubicacion, .costa-del-este, .text-5, .text-6, .text-7 {
+    font-size: 14px; /* Adjust font sizes */
+  }
+  .flex-row {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+  }
+}
+
+@media (max-width: 768px) {
+  .racing-buttons {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  .race-btn {
+      font-size: 14px;
+      padding: 0.7em 1.6em;
+  }
+}
+
+/* Dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+  .race-btn {
+      color: #ffffff;
+  }
+}
+

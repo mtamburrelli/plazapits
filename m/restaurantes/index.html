@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Directory</title>
+    <link rel="icon" href="../assets/images/icons/favicon-32x32.png" type="image/png"/>
+    <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One:wght@400&display=swap" />
+    <link href='index.css' rel='stylesheet'>
+</head>
+<body>
+
+    <h1>Restaurantes</h1>
+    <div class="container">
+
+        <div class="logo">
+            <a href="../index.html">
+            <img src="../assets/images/57f2f657b27937e08e248c6b9bbdaefaecac5689.png">
+            </a>
+        </div>
+
+        <div class="restaurants-grid">
+            <!-- Restaurant Card 1 -->
+            <div class="restaurant-card">
+                <div class="logo-container">
+                    <img src="../assets/images/pizzarella-logo.jpeg">
+                </div>
+                <h2 class="restaurant-name">PIZZARELLA</h2>
+                <a href="https://pdfhost.io/v/MHcaPywm2_Pizzarella_Menu" target="_blank" class="menu-link">VER MENU</a>
+                <div class="card-overlay"></div>
+            </div>
+
+            <!-- Restaurant Card 2 -->
+            <div class="restaurant-card">
+                <div class="logo-container">
+                    <img src="../assets/images/chicken_pigs-logo.jpg" >
+                </div>
+                <h2 class="restaurant-name">Chicken & Pigs</h2>
+                <a href="https://pdfhost.io/v/Hsl7mGXMp_Chicken_Pits" target="_blank" class="menu-link">VER MENU</a>
+                <div class="card-overlay"></div>
+            </div>
+
+            <!-- Restaurant Card 3 -->
+            <div class="restaurant-card">
+                <div class="logo-container">
+                    <img src="https://picsum.photos/200/200?random=3" alt="Restaurant Logo">
+                </div>
+                <h2 class="restaurant-name">Restaurant Name</h2>
+                <a href="#" class="menu-link">View Menu</a>
+                <div class="card-overlay"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+          
+          const logoLink = document.querySelector('.logo');
+          if (logoLink) {
+            logoLink.href = isMobile ? "https://m.plazapits.com" : "https://www.plazapits.com";
+          }
+        });
+      </script>
+</body>
+</html>

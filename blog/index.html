@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarWash Blog</title>
+    <link rel="icon" href="../assets/images/icons/favicon-32x32.png" type="image/png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Stencil+Std&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One:wght@400&display=swap" />
+    <link href='index.css' rel='stylesheet'>
+
+</head>
+<body>
+    <h1>Plaza Pits Blog</h1>
+    <div class="container">
+        <div class="logo">
+            <a href="../index.html">
+            <img src="../assets/images/57f2f657b27937e08e248c6b9bbdaefaecac5689.png">
+            </a>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <article class="blog-post">
+                <span class="date">Enero 15, 2023</span>
+                <h2 class="title">Nuestros Tips de Lavado Profesional</h2>
+                <p class="excerpt">Domina el arte del lavado de autos profesional con nuestra guía completa. 
+                    Aprenda los secretos para lograr ese brillo perfecto en todo momento, utilizando las técnicas y herramientas adecuadas.</p>
+                <a href="#" class="read-more">Leer más →</a>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-post">
+                <span class="date">Agosto 19, 2024</span>
+                <h2 class="title">El Arte del Lavado</h2>
+                <p class="excerpt">Domina el arte del lavado de autos profesional con nuestra guía completa. 
+                    Aprenda los secretos para lograr ese brillo perfecto en todo momento, utilizando las técnicas y herramientas adecuadas.</p>
+                <a href="#" class="read-more">Leer más →</a>
+            </article>
+        </div>
+    </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    const logoLink = document.querySelector('.logo');
+    if (logoLink) {
+      logoLink.href = isMobile ? "https://m.plazapits.com" : "https://www.plazapits.com";
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1239 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Optional: Use a different font */
+    background-color: #333; /* Optional: Set a background color */
+}
+
+a {
+    text-decoration: none;
+}
+
+.info-text:hover {
+    color: #880808;
+}
+
+.main-container {
+    max-width: 1200px; /* Maximum width for larger screens */
+    width: 90%; /* Relative width for smaller screens */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Padding for inner spacing */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+    background-color: #000000; /* Background color */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevents content from overflowing */
+}
+
+h3{
+    font-family: Allerta Stencil;
+}
+
+.carwash-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+}
+
+.pits-carwash-logo {
+    width: 100%; /* Fixed width in px instead of rem */
+    height: 200px; /* Match width for better proportions */
+    background-image: url("/carwash-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.location-section {
+    background: #000000;
+    padding: 4rem 0;
+    color: #ffffff;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+
+
+.info-column {
+    flex: 0 0 auto; /* Don't grow or shrink, use content size */
+    width: auto;
+}
+
+.map-container {
+    flex: 0 0 500px; /* Don't grow or shrink, fixed width */
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+    margin-bottom: 10px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30rem;
+    height: 30rem;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .location-container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .info-column {
+        width: 100%;
+    }
+    
+    .map-container {
+        width: 100%;
+        height: 400px;
+    }
+
+.location-title, .contact-title {
+    color: #880808;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 1.92px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+
+.contact-title {
+    margin-top: 0.3rem;
+}
+
+.location-info, .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-top: 0.25rem;
+}
+
+.info-text {
+    color: #ffffff;
+    font-family: 'Saira Stencil One', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 500px;
+} 
+
+.info-text1 {
+    color: #ffffff;
+    font-family: 'Saira Stencil One', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 500px;
+}
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .location-container {
+        gap: 1rem;
+    }
+
+    .info-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .location-title, .contact-title {
+        font-size: 2rem;
+    }
+
+        .location-container {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .info-column {
+            width: 100%;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 350px;
+            margin-top: 1rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .location-section {
+        padding: 2rem 0;
+    }
+
+    .location-title, .contact-title {
+        font-size: 1.75rem;
+    }
+
+    .info-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .info-text {
+        font-size: 0.9rem;
+    }
+
+    .map-container {
+        height: 250px;
+    }
+}
+
+.banner {
+        display: inline-flex; /* Use flexbox for alignment */
+        align-items: center; /* Center items vertically */
+        justify-content: space-between; /* Space between logo and text */
+        position: relative;
+        width: 90%;
+        height: 300px; /* Adjust height as needed */
+        overflow: hidden;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-radius: 8px; /* Match main-container border-radius */
+        margin-bottom: 20px; /* Add space between banner and main container */
+    }
+
+    .banner-text {
+        color: white;
+        font-size: 4rem;
+        font-family: Allerta Stencil;
+        text-transform: uppercase;
+        z-index: 2;
+        letter-spacing: 0.8vh;
+        flex: 1; /* Allow text to take up remaining space */
+    }
+    
+    /* Media Query for responsiveness */
+    @media screen and (max-width: 768px) {
+        .banner-text {
+            font-size: 2.5rem;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .banner {
+            height: 200px;
+        }
+    
+        .banner-text {
+            font-size: 1.8rem;
+        }
+    }
+
+.banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/banner-bg.png'); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px; /* Match container radius */
+}
+
+.banner-text {
+    position: absolute;
+    left: 300px; /* Adjust positioning as needed */
+    top: 40%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 4rem;
+    font-family: Allerta Stencil;
+    text-transform: uppercase;
+    z-index: 2;
+    letter-spacing: 0.8vh;
+    margin: 15px;
+    text-wrap: nowrap;
+}
+
+/* Add a darkening overlay if needed */
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
+    z-index: 1;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    padding: 2rem 2rem; /* Adjusted padding to give more space */
+    width: 100%;
+    position: relative;
+}
+  
+  .pits-logo {
+    width: 12rem; /* Increased base width */
+    height: 8rem;  /* Increased proportionally */
+    background: url("/pits-logo.png") no-repeat center;
+    background-size: contain; /* This ensures the image fits without cropping */
+    z-index: 2;
+    margin-right: 1rem;
+}
+
+.carwash-logo-background {
+    position: relative;
+    width: 100%;
+    min-height: 400px; /* Fixed minimum height */
+    background-image: url('/carwash-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    /* Add overlay */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        z-index: 1;
+    }
+}
+
+.pits-carwash-logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.car-wash-detailing {
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Allerta Stencil', sans-serif;
+    text-align: center;
+    margin-top: 15px;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .pits-carwash-logo {
+        width: 150px;
+        height: 166.8px;
+        margin-right: 1rem;
+    }
+
+    .car-wash-detailing {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pits-carwash-logo {
+        width: 120px;
+        height: 133.44px;
+        margin-right: 1rem;
+    }
+
+    .car-wash-detailing {
+        font-size: 1rem;
+    }
+}
+
+/* Media Query for responsiveness */
+@media screen and (max-width: 768px) {
+    .banner-logo {
+        width: 150px;
+        left: 20px;
+    }
+
+    .banner-text {
+        font-size: 4rem;
+        left: 8rem;
+        text-wrap: wrap ;
+        letter-spacing: 3px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner {
+        height: 200px;
+    }
+
+    .banner-logo {
+        width: 100px;
+        left: 10px;
+    }
+
+    .banner-text {
+        font-size: 1.8rem;
+        left: 120px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .carwash-logo-background {
+        min-height: 300px;
+    }
+
+    .pits-carwash-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .car-wash-detailing {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carwash-logo-background {
+        min-height: 250px;
+    }
+
+    .pits-carwash-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .car-wash-detailing {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .pits-logo {
+        width: 10rem;
+        height: 6.67rem; /* Maintains aspect ratio */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pits-logo {
+        width: 8rem;
+        height: 5.33rem;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-container {
+        padding: 1rem;
+        gap: 10px;
+    }
+
+    .pits-logo {
+        width: 6rem;
+        height: 4rem;
+        margin-right: 0.5rem;
+    }
+}
+
+css
+Copy
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+}
+
+/* Large Screens (1200px and up) */
+@media screen and (min-width: 1200px) {
+    .content-wrapper {
+        padding: 60px 40px;
+    }
+
+    .banner {
+        height: 400px;
+    }
+
+    .banner-text {
+        font-size: 4.5rem;
+    }
+
+    .pits-logo {
+        width: 15rem;
+        height: 10rem;
+    }
+}
+
+/* Medium-Large Screens (992px to 1199px) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .content-wrapper {
+        padding: 50px 30px;
+    }
+
+    .banner {
+        height: 350px;
+    }
+
+    .banner-text {
+        font-size: 4rem;
+    }
+
+    .pits-logo {
+        width: 12rem;
+        height: 8rem;
+    }
+}
+
+/* Medium Screens (768px to 991px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .content-wrapper {
+        padding: 40px 25px;
+    }
+
+    .banner {
+        height: 300px;
+    }
+
+    .banner-text {
+        font-size: 3rem;
+        left: 250px;
+    }
+
+    .pits-logo {
+        width: 10rem;
+        height: 6.67rem;
+    }
+
+    .car-wash-detailing {
+        font-size: 1.3rem;
+    }
+}
+
+/* Small Screens (576px to 767px) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .content-wrapper {
+        padding: 30px 20px;
+    }
+
+    .banner {
+        height: 250px;
+    }
+
+    .banner-text {
+        font-size: 2.5rem;
+        left: 200px;
+    }
+
+    .pits-logo {
+        width: 8rem;
+        height: 5.33rem;
+    }
+
+    .car-wash-detailing {
+        font-size: 1.2rem;
+    }
+
+    .logo-container {
+        gap: 15px;
+        padding-top: 2rem;
+    }
+}
+
+/* Extra Small Screens (575px and below) */
+@media screen and (max-width: 575px) {
+    .content-wrapper {
+        padding: 20px 15px;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+    .banner-text {
+        font-size: 2rem;
+        left: 150px;
+        letter-spacing: 0.4vh;
+    }
+
+    .pits-logo {
+        width: 6rem;
+        height: 4rem;
+    }
+
+    .car-wash-detailing {
+        font-size: 1rem;
+    }
+
+    .logo-container {
+        gap: 10px;
+        padding-top: 1.5rem;
+    }
+}
+.gallery-section {
+    width: 100%;
+    min-height: 40vh; /* Reduced from 100vh */
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the gallery section */
+    justify-content: center; /* Center the gallery section */
+  }
+  
+  .gallery-title {
+    font-family: 'Allerta Stencil';
+    text-align: center;
+    margin-bottom: auto;
+    color: #cf0029;
+  }
+  
+  .gallery-title h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    font-family: Saira Stencil One, var(--default-font-family);
+    letter-spacing: 2px;
+  }
+  
+  .gallery-showcase {
+    max-width: 800px; /* Reduced from 1200px */
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the gallery showcase */
+  }
+  
+  .gallery-main {
+    width: 100%;
+    max-width: 600px; /* Added max-width */
+    height: 337.5px; /* 16:9 aspect ratio for 600px width */
+    margin: 0 auto;
+    position: relative;
+    overflow: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
+  }
+  
+  .gallery-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .gallery-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+  }
+  
+  .gallery-container img.active {
+    opacity: 1;
+  }
+  
+  .gallery-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #ff0000;
+    transition: width 0.3s linear;
+  }
+  
+  .gallery-thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0.5rem 0;
+    max-width: 600px; /* Match gallery-main max-width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .gallery-thumbnails::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .thumbnail {
+    width: 100px; /* Reduced from 100px */
+    height: 60px; /* Reduced from 60px */
+    flex-shrink: 0;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .thumbnail.active {
+    border-color: #ff0000;
+    opacity: 1;
+  }
+
+  .rectangle {
+    position: relative;
+    width: 100%; /* Changed to 100% for responsiveness */
+    height: auto;
+    margin: 31px 0 0 0;
+    background: #000000;
+    z-index: 7;
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-section {
+        padding: 1.5rem 1rem;
+    }
+  
+    .gallery-main {
+        max-width: 100%;
+        height: 56.25vw; /* Maintain 16:9 aspect ratio */
+    }
+  
+    .gallery-title h3 {
+        font-size: 1.5rem;
+    }
+  
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-section {
+        padding: 1rem;
+    }
+  
+    .thumbnail {
+        width: 50px;
+        height: 28px;
+    }
+  }
+
+  .racing-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 1rem; /* Reduce bottom margin */
+  }
+  
+  .race-btn {
+    position: relative;
+    padding: 5em 2.5em;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Allerta Stencil';
+    letter-spacing: 2px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    overflow: auto;
+  }
+  
+  .btn-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1;
+  }
+  
+  .btn-line {
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: #ff0000;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -4px;
+    width: 12px;
+    height: 2px;
+    background-color: #ff0000;
+    transition: all 0.3s ease;
+  }
+  
+  .race-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .race-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #ff0000, transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Button-specific styles */
+  .services-btn .btn-line {
+    width: 20px;
+  }
+
+ .racing-buttons a {
+    text-decoration: none;
+    color: #fff;
+}
+  
+  .booking-btn .btn-line {
+    width: 28px;
+  }
+  
+  .contact-btn .btn-line {
+    width: 24px;
+  }
+  
+  /* Hover effects */
+  .race-btn:hover {
+    color: #ff0000;
+  }
+  
+  .race-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .race-btn:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .race-btn:hover .btn-line {
+    transform: translateX(5px);
+    background-color: #ff0000;
+  }
+  
+  .race-btn:hover .btn-line::before {
+    transform: translateX(-3px);
+    width: 16px;
+  }
+  
+  /* Active state */
+  .race-btn:active {
+    transform: scale(0.98);
+  }
+  
+  .map-div {
+    float: right;
+  
+    /* Add spacing as needed */
+    margin: 5%;
+    margin-top: auto;
+    
+    /* Control map size */
+    width: max-content;
+    height: max-content;
+  }
+
+  .text-8 {
+    height: 19.948px; /* Ensure height matches */
+    color: #ffffff;
+    font-family: Allerta Stencil;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 19.948px; /* Match line height to height */
+    margin-left: 24px; /* Space between icon and text */
+    font-family: 'Allerta Stencil', sans-serif;
+    font-weight: 800;
+  }
+  
+  .costa-del-este {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 489px;
+    height: 61px;
+    top: 0;
+    left: 43px;
+    color: #ffffff;
+    font-family: Saira Stencil One, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 24.205px;
+    text-align: center;
+    letter-spacing: 1.2px;
+    z-index: 13;
+  }
+  
+  .text-5 {
+    display: block;
+    position: relative;
+    height: 42px;
+    margin: 24px 0 0 39px;
+    color: #880808;
+    font-family: "Allerta Stencil";
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 38.727px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: 1.92px;
+    z-index: 11;
+  }
+  
+  .text-6 {
+    display: block;
+    position: relative;
+    height: 11px;
+    margin: 24px 0 0 82px;
+    color: #ffffff;
+    font-family: "Allerta Stencil";
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 11px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: 0.96px;
+    z-index: 17;
+  }
+
+  .pic-3 {
+    position: relative;
+    width: 17.5px;
+    height: 17.5px;
+    margin: -10px 0 0 47px;
+    background: url(/270a25fd-7f2e-4818-9315-866a0bc6b0d5.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 14;
+  }
+
+  .text-7 {
+    display: block;
+    position: relative;
+    height: 11px;
+    margin: 24px 0 0 82px;
+    color: #ffffff;
+    font-family: "Allerta Stencil";
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 11px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: 0.96px;
+    z-index: 16;
+  }
+  
+  
+  
+  .pic-4 {
+    position: relative;
+    width: 17.5px;
+    height: 17.5px;
+    margin: -10px 0 0 47px;
+    background: url(/2835b572-68e5-47ec-b0d9-2cb3b1234870.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 15;
+  }
+  
+  .rectangle-3 {
+    position: absolute;
+    width: 1440px;
+    height: 355px;
+    top: 0;
+    left: 0;
+    background: url(./assets/images/95b8ff7d-0a28-4502-a75c-a30ae45c2186.png)
+      no-repeat center;
+    background-size: cover;
+    border-right: 1px solid #000000;
+    border-left: 1px solid #000000;
+  }
+
+  .flex-row {
+    display: flex;
+    position: relative;
+    width: 953px;
+    height: 301px;
+    margin: 0px 0 0 25px;
+    z-index: 6;
+  }
+
+  .rectangle-2 {
+    position: absolute;
+    font-family: Saira Stencil One, var(--default-font-family);
+    width: 1440px;
+    height: 555px;
+    top: 333px;
+    left: 0;
+    font-size: 0px;
+    background: #000000;
+    z-index: 9;
+  }
+  
+  .location-section {
+    background: #000000;
+    padding: 4rem 2rem;
+    color: #ffffff;
+}
+
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.section-title {
+    color: #880808;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 1.92px;
+    margin-bottom: 1.5rem;
+}
+
+.location-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.address-container, .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.location-icon, .contact-icon {
+    width: 17.5px;
+    height: 17.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-text, .contact-text {
+    color: #ffffff;
+    font-family: Allerta Stencil;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.96px;
+    line-height: 1.5;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .location-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .map-container {
+        width: 50%;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .location-text, .contact-text {
+        font-size: 0.9rem;
+    }
+
+    .location-section {
+        padding: 2rem 1rem;
+    }
+}
+  
+
+  .mail-container {
+    position: absolute; /* or relative if needed */
+    top: 350px; /* Adjust to match the desired vertical alignment */
+    left: 48px; /* Adjust to position correctly */
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Vertically center the items */
+  }
+  
+  .mail {
+    width: auto;
+    height: auto;
+    background: url("/mail.png") no-repeat center;
+    background-size: cover;
+  }
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .racing-buttons {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+  
+    .race-btn {
+        font-size: 14px;
+        padding: 0.7em 1.6em;
+    }
+  }
+  
+  /* Dark mode compatibility */
+  @media (prefers-color-scheme: dark) {
+    .race-btn {
+        color: #ffffff;
+    }
+    
+    .race-btn:hover {
+        color: #ff0000;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .map-container {
+        width: 40%; /* Takes less width on desktop */
+        padding-bottom: 20%; /* Maintains aspect ratio */
+        margin-left: auto; /* Pushes map to the  */
+        order: 2; /* Makes map appear second */
+
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .map-container {
+        width: 100%;
+        padding-bottom: 20%; /* Taller aspect ratio for mobile */
+        margin: 2rem 0;
+        order: 2; /* Makes map appear second */
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .map-container {
+        padding-bottom: 20%; 
+        order: 2; /* Makes map appear second */
+
+    }
+
+    @media screen and (max-width: 1024px) {
+        .location-container {
+            gap: 4rem;
+            padding: 0 2rem;
+            flex-direction: column; /* This makes elements stack vertically */
+
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        .location-container {
+            flex-direction: column;
+            padding: 0 1.5rem;
+            gap: 2rem;
+            align-items: center;
+        }
+    
+        .info-column {
+            flex: 1;
+            max-width: 100%;
+        }
+    
+        .map-container {
+            width: 100%;
+            padding-bottom: 20%;
+            margin-top: 2rem;
+            order: 2; /* Makes map appear second */
+
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .location-container {
+            padding: 0 1rem;
+            flex-direction: column; /* This makes elements stack vertically */
+            align-items: center;
+        }
+    
+        .map-container {
+            padding-bottom: 20%;
+            order: 2; /* Makes map appear second */
+
+        }
+    }}

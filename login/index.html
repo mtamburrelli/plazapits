@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allerta+Stencil:wght@400&display=swap" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <a href="../index.html">
+            <img src="../assets/images/e27bdcd0b67c84811c1fcde6d4a08c4e2a6a4e02.png">
+            </a>
+        </div>
+
+    <div class="login-container">
+        <div class="title-container">
+            <h1 class="title">SIGN IN</h1>
+            <div class="red-line"></div>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <input type="email" placeholder="Email" required autocomplete="email">
+                <input type="password" placeholder="Password" required autocomplete="current-password">
+            </div>
+
+            <button type="submit">
+                Login
+                <span class="arrow">→</span>
+            </button>
+        </form>
+
+        <div class="create-account">
+            <a href="#" role="button">Create Account</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Handle login logic here
+            console.log('Form submitted');
+        });
+
+        // Prevent double-tap zoom on mobile
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>

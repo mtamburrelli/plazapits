@@ -1,0 +1,734 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+a {
+  color: #f3f3f5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a:hover {
+  color: #cf0029;
+}
+.main-container {
+  position: relative;
+  z-index: 1;  /* Ensure main container is below menu */
+}
+
+nav {
+  position: fixed;  /* Make nav fixed */
+  top: 0;
+  width: 100%;
+  z-index: 10000;  /* Higher than menu */
+}
+
+.ham-menu {
+  position: fixed;  /* Make hamburger fixed */
+  top: 10px;
+  right: 10px;
+  z-index: 10001;  /* Highest z-index */
+}
+
+.off-screen-menu {
+  position: fixed;  /* Changed from absolute to fixed */
+  top: 0;
+  right: -350px;  /* Change from right to left */
+  height: 100vh;
+  width: 255px;
+  max-width: 255px;
+  background-color: rgba(10, 0, 0, 0.966);
+  z-index: 9999;  /* Extremely high z-index */ 
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  justify-content: center;
+}
+
+.off-screen-menu {
+  opacity: 0.75;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  transition: .3s ease;
+}
+.off-screen-menu.active {
+  width: 350px;
+  right: 0;
+}
+
+.off-screen-menu ul li a {
+  font-size: 1.5rem; /* Adjust this value as needed */
+  font-family: Saira Stencil One, var(--default-font-family);
+  color: #f3f3f5;
+  text-decoration: none;
+  margin: 10px 0; /* Add spacing between items */
+  transition: color 0.3s ease;
+}
+
+.off-screen-menu ul li a:hover {
+  color: #cf0029; /* Keeps hover effect consistent */
+}
+
+.off-screen-menu ul {
+  list-style: none;
+  padding: 0; /* Optional: Remove default padding */
+  margin: 0; /* Optional: Remove default margin */
+}
+
+
+
+nav {
+  padding: 0rem;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+}
+
+.ham-menu {
+  height: 50px; /* Reduced size */
+  width: 45px;  /* Reduced size */
+  margin-left: 10px;
+  position: fixed;
+  top: 5px; /* Adjusted positioning */
+  left: auto; /* Adjusted positioning */
+  z-index: 10001;  
+  cursor: pointer; /* Ensures it's easily recognized as clickable */
+}
+
+.ham-menu span {
+  height: 4px; /* Reduced thickness */
+  width: 100%;
+  background-color: red;
+  border-radius: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+
+.ham-menu.active span {
+  background-color: white;
+}
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+.main-container,
+.main-container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.main-container {
+  position: relative;
+  
+  width: 100%;  /* Change from fixed width to full width */
+  min-height: 100vh;  /* Minimum height of viewport */
+  min-width: 100vh;
+  margin: 0 auto;
+  background: #000000;
+  background-image: url("../assets/images/6027.jpg");
+  background-size: cover;
+  overflow-x: hidden;  /* Prevent horizontal scrolling */
+  overflow-y: auto;   /* Allow vertical scrolling */
+  align-items: center;
+  justify-content: center;
+}
+.flex-row-c {
+  position: relative;
+  width: 1440px;
+  height: 343px;
+  margin: 681px 0 0 0;
+  z-index: 12;
+}
+.pits-carwash-logo {
+  position: absolute;
+  width: 309.4px;
+  height: 204.4px;
+  top: 40px;
+  left: 325px;
+  background: url(../assets/images/57f2f657b27937e08e248c6b9bbdaefaecac5689.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 9;
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+  transform-origin: center;
+}
+.pits-carwash-logo:hover {
+  transform: scale(1.1); /* Grows the logo towards the viewer */
+  opacity: 1;
+  filter: brightness(1.2);
+}
+.pits-detailing {
+  position: absolute;
+  width: 309.4px;
+  height: 204.4px;
+  top: 40px;
+  left: 1011px;
+  background: url(../assets/images/ef6a47feffd8b518e8e9cc781c9b0a05060e007e.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 12;
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+  transform-origin: center;
+}
+.pits-detailing:hover {
+  transform: scale(1.1); /* Grows the logo towards the viewer */
+  opacity: 1;
+  filter: brightness(1.2);
+}
+.rectangle {
+  position: absolute;
+  min-width: 1650px;
+  height: 314px;
+  top: 29px;
+  left: 0;
+  background: #000000;
+  z-index: 6;
+}
+.pits-carwash {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 148px;
+  height: 38px;
+  top: 287px;
+  left: 403px;
+  color: #ffffff;
+  font-family: Allerta Stencil, var(--default-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25.566px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 8;
+}
+.pits-detailing-1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 148px;
+  height: 38px;
+  top: 287px;
+  left: 1088px;
+  color: #ffffff;
+  font-family: Allerta Stencil, var(--default-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25.566px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 11;
+}
+
+.logo-container {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Vertically align the logo and text */
+  justify-content: start; /* Ensure logo is on the left */
+  gap: 15px; /* Space between logo and text */
+}
+
+.pits-carwash-logo-nobg {
+  position: static; /* Ensure it participates in normal document flow */
+  width: 474.75px; 
+  height: 295.5px; 
+  margin: 0px 0 0 35px;
+  background: url(../assets/images/57f2f657b27937e08e248c6b9bbdaefaecac5689.png)
+    no-repeat center;
+  background-size: cover;
+}
+
+.logo-text {
+  font-size: 128px; /* Adjust the text size */
+  font-weight: normal; /* Bold text */
+  color: #ffffff; /* Text color */
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-align: center;   
+  margin: 35px 0 0 35px;
+  margin-bottom: 20px;
+  font-family: Saira Stencil One, var(--default-font-family);
+}
+
+
+/* .pits-carwash-logo-nobg:hover {
+  transform: scale(1.1); Grows the logo towards the viewer 
+  opacity: 1;
+  filter: brightness(1.2);
+}*/
+
+
+.rectangle-2 {
+  position: absolute;
+  filter: brightness(1);
+  width: 1650px;
+  height: 355px;
+  top: 0;
+  left: 0;
+  background: url(../assets/images/close-up-fragile-foam-bubbles_23-2147798007.jpg)
+    no-repeat center;
+  background-size: cover;
+  opacity: 1;
+}
+
+.flex-row {
+  position: absolute;
+  width: 1312.5px;
+  height: 300px;
+  top: 354px;
+  left: 2.5px;
+  z-index: 5;
+}
+
+.quienes-somos {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 386px;
+  height: 79px;
+  top: 21px;
+  left: 628.5px;
+  color: #ffffff;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 33.886px;
+  text-align: center;
+  z-index: 4;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.car-wash-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  width: 1191px;
+  height: 213px;
+  top: 87px;
+  left: 221.5px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: justify;
+  z-index: 5;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-optical-sizing: auto;
+  font-style: normal;
+  }
+
+.rectangle-4 {
+  position: absolute;
+  width: 1650px;
+  height: 355px;
+  top: 355px;
+  left: 0;
+  background: url(../assets/images/269f83bf4b7bb0cb1082e85b0a2b1e4cedf0a558.png)
+    no-repeat center;
+  background-size: cover;
+  opacity: 0.90;
+  z-index: 2;
+}
+
+.contact-section {
+  background-color: black;
+  color: white;
+  left: 0;
+  padding: 20px;
+  text-align: left;
+  font-family: Saira Stencil One, var(--default-font-family);
+  width: 1650px;
+}
+
+.contact-title {
+  position: relative;
+  left: 180px;
+  color: #cf0029;
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-family: Saira Stencil One, var(--default-font-family);
+}
+
+.contact-info {
+  position: relative;
+  left: 180px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contact-icon {
+  color: #cf0029; /* Red color for icons */
+  margin-right: 15px;
+  font-size: 1.5rem;
+  width: 30px; /* Ensure consistent icon spacing */
+}
+
+.contact-text {
+  color: #f3f3f5; /* White text */
+  font-size: 1rem;
+  text-decoration: none;
+  font-family: Saira Stencil One, var(--default-font-family);
+}
+
+
+
+
+.sliding-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  70% {
+      transform: translateX(10%);
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* If you want the image to slide to a specific position, 
+ you can position the container absolutely */
+
+/* Optional: Add hover effect */
+.sliding-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.sliding-image-container.visible .sliding-image {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+/* Optional hover effect after animation */
+.sliding-image-container.visible .sliding-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #000000; /* This is already black, but make sure it's not overridden */
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+#clientes-sec {
+  background-color: #000000;
+  width: 1650px;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.section-title {
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 2rem;
+  color: #ff3333;
+  margin-bottom: 3rem;
+  text-align: center; /* Center the title */
+}
+
+.reviews-container {
+  position: relative;
+  overflow: hidden;
+  padding: 0 30px;
+  background-color: #000000; /* Ensure container background is black */
+}
+
+/* Update the review cards to have a darker background */
+.review-card {
+  min-width: calc(50% - 1rem);
+  background: #1a1a1a;
+  padding: 2rem;
+  border-left: 3px solid #ff3333;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+}
+
+.reviews-grid {
+  display: flex;
+  transition: transform 0.4s ease;
+  font-family: Saira Stencil One, var(--default-font-family);
+  gap: 2rem;
+}
+
+.rating {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #ffa500;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 1.2rem;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.client-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ff3333;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.client-name {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.client-date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.review-text {
+  color: #cccccc;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff3333;
+  font-size: 2rem;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.arrow:hover {
+  opacity: 0.7;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .review-card {
+      min-width: 100%;
+  }
+  
+  body {
+      padding: 1rem;
+  }
+}
+
+.contact-section {
+  background-color: black;
+  color: white;
+  padding: 40px;
+  position: relative;
+  font-family: Saira Stencil One, var(--default-font-family);
+}
+
+.contact-details {
+  flex: 1;
+  max-width: 60%;
+}
+
+.contact-item {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+@keyframes slideIn {
+  0% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-info {
+      flex-direction: column;
+  }
+}
+  .contact-details {
+      max-width: 100%;
+  }
+
+.sliding-image-container {
+  position: absolute;
+  right: 10px; /* Adjust this value to position horizontally */
+  bottom: 10px;  /* Adjust this value to position vertically */
+  left: 910px;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sliding-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0; /* Start hidden */
+  transform: translateX(100%); /* Start from right */
+  transition: all 1.5s ease-out;
+}
+
+/* This class will be added by JavaScript when scrolled into view */
+.sliding-image-container.reveal .sliding-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.raleway {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 420;
+  font-style: normal;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100000; /* Higher than any other element */
+  overflow: hidden;
+}
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Default width for larger screens */
+  height: 85vh; /* Default height for the viewer */
+  max-width: 1200px; /* Limit the maximum width */
+  background-color: #1e1e1e; /* Dark background for better PDF visibility */
+  border-radius: 8px; /* Slightly rounded corners */
+  padding: 0; /* No padding around the viewer */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for aesthetics */
+  z-index: 100001;
+}
+
+.close-btn {
+  position: static;
+  right: 20px; /* Keep it consistent for all screens */
+  top: 50px;
+  color: #fff;
+  font-size: 45px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 100002;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#pdf-viewer {
+  width: 100%; /* Takes up the full width of the modal-content */
+  height: 100%; /* Takes up the full height of the modal-content */
+  border: none; /* Remove border for a cleaner look */
+  z-index: 100001;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%; /* Adjust for smaller screens */
+    height: 80vh; /* Slightly smaller height for better usability */
+  }
+
+  .close-btn {
+    font-size: 30px; /* Slightly smaller close button for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 100%; /* Full screen width */
+    height: 75vh; /* Reduce height further for very small devices */
+  }
+}

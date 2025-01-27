@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pits Car Wash</title>
+    <link rel="icon" href="../assets/images/icons/favicon-32x32.png" type="image/png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@1,400;1,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allerta+Stencil:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One:wght@400&display=swap" />
+    <link rel="stylesheet" href="pits_carwash.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="off-screen-menu">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="#nosotros-sec">Nosotros</a></li>
+            <li><a href="#servicios-sec">Servicios</a></li>
+            <li><a href="#contacto-sec">Contacto</a></li>
+            <li><a href="#clientes-sec">Clientes</a></li>
+        </ul>
+    </div>
+
+    <nav>
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- Services Section -->
+
+        <div id="servicios-sec">
+            <div class="flex-row-c">
+                
+                <-- Primer PDF -->
+                <div class="pits-carwash-logo" onclick="openModal('modal1', '../assets/carwash_prices.pdf#zoom=fit')" alt="Click to open PDF"></div>
+                <div class="rectangle"></div>
+                <div id="modal1" class="modal">
+                    <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+                    <div class="modal-content">
+                        <embed id="pdf-viewer" src="../assets/carwash_prices.pdf" type="application/pdf">
+                    </div>
+                </div>
+                    
+                <-- Segundo PDF -->
+                <div class="pits-detailing" onclick="openModal('modal2', '../assets/det_pits.pdf#zoom=fit')" alt="Click to open PDF"></div>
+                <div class="rectangle"></div>
+                <div id="modal2" class="modal">
+                    <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+                    <div class="modal-content">
+                        <embed id="pdf-viewer" src="../assets/det_pits.pdf" type="application/pdf">
+                    </div>
+                </div>
+
+                    
+                <span class="pits-carwash">PITS CARWASH</span>
+                <span class="pits-detailing-1">PITS DETAILING</span>               
+            </div>
+        
+            
+        </div>
+
+        <div class="rectangle-2">
+
+            <div class="logo-container">
+                <div class="pits-carwash-logo-nobg"></div>
+                <span class="logo-text">PITS CAR WASH</span>
+            </div>
+
+        </div>
+
+        <!-- About Us Section -->
+        <div class="flex-row">
+            <div id="nosotros-sec">
+                <div class="rectangle-3"></div>
+                <span class="quienes-somos">¿Quiénes somos?</span>
+                <span class="car-wash-info">
+                    Somos un equipo con extensa experiencia en limpieza de autos. Ofrecemos un servicio de alta calidad para
+                    nuestros clientes, porque usted merece lo mejor. 
+                    Nos enorgullecemos de brindarle precios sorprendentemente asequibles.<br /><br />
+                    Nuestro car wash utiliza máquinas automatizadas de última generación
+                    para ofrecer un lavado impecable y eficiente, garantizando que su
+                    vehículo salga reluciente en tiempo récord.<br /><br /> Nuestro enfoque en la eficiencia y la
+                    automatización nos permite mantener costos bajos sin comprometer la
+                    calidad, lo que se traduce en ahorros significativos para nuestros
+                    clientes. Experimente la combinación perfecta de tecnología avanzada,
+                    precios competitivos y un servicio que cuida su vehículo como si fuera
+                    nuestro propio.<br /><br /><br /><br />
+                </span>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contacto-sec">
+    <div class="rectangle-4"></div>
+    <div class="contact-section">
+        <h1 class="contact-title">Contacto</h1>
+        <div class="contact-info">
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fa-brands fa-whatsapp contact-icon"></i>
+                    <a class="contact-text" href="https://wa.me/50765207773">+507 6520-7773</a>
+                </div>
+                <div class="contact-item">
+
+                    <i class="fa-solid fa-location-crosshairs contact-icon"></i>
+                    <span class="contact-text">Costa del Este, Ave. Centenario, al lado de McDonald's, frente a Porsche</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-regular fa-paper-plane contact-icon"></i>
+                    <span class="contact-text">placeholder@plazapits.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-instagram contact-icon"></i>
+                    <span class="contact-text">@plazapits</span>
+                </div>
+            </div>
+            
+            <!-- Sliding Image -->
+            <div class="sliding-image-container">
+                <img src="../assets/images/carro-carwash.png" class="sliding-image" alt="Car Wash">
+            </div>
+        </div>
+    </div>
+</div>
+      
+
+        <!-- Clients Section -->
+        <section id="clientes-sec">
+            <div class="container">
+                <h2 class="section-title">Clientes</h2>
+                <div class="reviews-container">
+                    <button class="arrow prev" onclick="slideReviews('prev')">‹</button>
+                    <button class="arrow next" onclick="slideReviews('next')">›</button>
+                    
+                    <div class="reviews-grid">
+                        <!-- Review 1 -->
+                        <div class="review-card">
+                            <div class="rating">9/10</div>
+                            <div class="client-info">
+                                <div class="client-avatar">JD</div>
+                                <div>
+                                    <div class="client-name">Juan Díaz</div>
+                                    <div class="client-date">15 Agosto 2023</div>
+                                </div>
+                            </div>
+                            <p class="review-text">
+                                Servicio excepcional. Mi coche quedó impecable, como nuevo. El equipo fue muy profesional y cuidadoso con cada detalle. 
+                                Definitivamente volveré.
+                            </p>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="review-card">
+                            <div class="rating">10/10</div>
+                            <div class="client-info">
+                                <div class="client-avatar">MC</div>
+                                <div>
+                                    <div class="client-name">María Cruz</div>
+                                    <div class="client-date">14 Agosto 2023</div>
+                                </div>
+                            </div>
+                            <p class="review-text">
+                                La mejor experiencia de lavado que he tenido. El servicio premium vale cada centavo. 
+                                El interior quedó como nuevo y el encerado dio un brillo espectacular.
+                            </p>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="review-card">
+                            <div class="rating">8/10</div>
+                            <div class="client-info">
+                                <div class="client-avatar">RP</div>
+                                <div>
+                                    <div class="client-name">Roberto Pérez</div>
+                                    <div class="client-date">13 Agosto 2023</div>
+                                </div>
+                            </div>
+                            <p class="review-text">
+                                Rápido y eficiente. El personal es muy amable y el resultado final superó mis expectativas. 
+                                Los productos que utilizan son de primera calidad.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
