@@ -8,7 +8,7 @@ let currentSlide = 0;
 function slideReviews(direction) {
     const slider = document.querySelector('.reviews-grid');
     const cards = document.querySelectorAll('.review-card');
-    const cardsPerView = 1; // Show only one card at a time
+    const cardsPerView = window.innerWidth <= 768 ? 1 : 2;
     const totalSlides = Math.ceil(cards.length / cardsPerView);
     
     if (direction === 'next') {
@@ -62,51 +62,63 @@ toggleButton.addEventListener('click', function() {
         imageContainer.style.opacity = '1';
     }, 300); // Match this with your CSS transition time
 });
-
-// PDF code here G-zus
-
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-// Get the elements
-const showPdfDetailingElement = document.getElementById('show-pdf-det');
-const showPdfCarwashElement = document.getElementById('show-pdf-cw');
-
-// Define the paths (use relative paths from your web server instead of file:/// URLs)
-const detailingPdfPath = './assets/detailing_prices.pdf';
-const carwashPdfPath = './assets/carwash_prices.pdf';
-
-// Function to show PDF in container
-function showPdfInContainer(pdfPath) {
-    // Create a container if it doesn't exist
-    let pdfContainer = document.getElementById('pdf-container');
-    if (!pdfContainer) {
-        pdfContainer = document.createElement('div');
-        pdfContainer.id = 'pdf-container';
-        document.body.appendChild(pdfContainer);
-    }
-
-    // Create an embed element for the PDF
-    const embed = document.createElement('embed');
-    embed.src = pdfPath;
-    embed.type = 'application/pdf';
-    embed.width = '100%';
-    embed.height = '600px';
-
-    // Clear the container and add the embed element
-    pdfContainer.innerHTML = '';
-    pdfContainer.appendChild(embed);
-}
-
-// Add click event listeners if elements exist
-if (showPdfDetailingElement) {
-    showPdfDetailingElement.addEventListener('click', function() {
-        showPdfInContainer(detailingPdfPath);
-    });
-}
-
-if (showPdfCarwashElement) {
-    showPdfCarwashElement.addEventListener('click', function() {
-        showPdfInContainer(carwashPdfPath);
-    });
-}
 });
+
+// Function to open the PDF viewer
+function openPdfViewer(pdfUrl) {
+    const container = document.getElementById('pdf-viewer-container');
+  
+    // Show the container
+    container.style.display = 'block';
+  
+    // Clear any previous content
+    container.innerHTML = '<button id="close-pdf-button">X</button>';
+  
+    // Initialize PDF.js and render the PDF
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        pdf.getPage(pageNum).then(page => {
+          const scale = 1.5;
+          const viewport = page.getViewport({ scale });
+  
+          // Create a canvas element for the page
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+  
+          // Render the page into the canvas
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport,
+          };
+          page.render(renderContext).promise.then(() => {
+            container.appendChild(canvas);
+          });
+        });
+      }
+    });
+  
+    // Add event listener for the close button
+    document.getElementById('close-pdf-button').addEventListener('click', function () {
+      container.style.display = 'none';
+    });
+  
+    // Add event listener for the Esc key
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        container.style.display = 'none';
+      }
+    });
+  }
+  
+  // Add event listeners for both buttons
+  document.getElementById('show-pdf-cw').addEventListener('click', function () {
+    const pdfUrl = this.getAttribute('data-pdf-url'); // Get PDF URL from data attribute
+    openPdfViewer(pdfUrl);
+  });
+  
+  document.getElementById('show-pdf-det').addEventListener('click', function () {
+    const pdfUrl = this.getAttribute('data-pdf-url'); // Get PDF URL from data attribute
+    openPdfViewer(pdfUrl);
+  });

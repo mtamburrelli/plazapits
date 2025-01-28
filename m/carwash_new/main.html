@@ -12,11 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script>
-    window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-</script>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="banner">
@@ -64,15 +59,20 @@
                     <div class="image-text-container">
                         <div class="inline-text">
                             <div class="left-side">
-                                <div id="show-pdf-cw" class="pits-carwash-logo"></div>                                
+                                <div data-document-id="./assets/images/57f2f657b27937e08e248c6b9bbdaefaecac5689.png" class="pdf-selector">
+                                    <div id="show-pdf-cw" class="pits-carwash-logo"></div>      
+                                </div>                          
                                 <span class="pits-carwash">
                                     CAR WASH
                                 </span>
-                            </div>
+                        
 
                             <div class="right-side">
+                                <div data-document-id="./assets/images/ef6a47feffd8b518e8e9cc781c9b0a05060e007e.png" class="pdf-selector">
                                 <div id="show-pdf-det" class="pits-detailing"></div>
-                                    <span  class="pits-detailing-1">
+                                </div>
+                                </div>
+                                <span  class="pits-detailing-1">
                                     DETAILING
                                 </span>
                                 </div>
@@ -182,8 +182,10 @@
             </div>
         </div>
     </div>
+
+    <div id="viewer" style="width: 100%; height: 500px;"></div>
     <!--pdf-->
-    <div id="pdf-modal" class="pdf-modal">
+    <!--<div id="pdf-modal" class="pdf-modal">
         <div class="pdf-modal-content">
             <span class="close-button">&times;</span>
             <object 
@@ -193,8 +195,9 @@
                 height="100%">
             </object>
         </div>
-    </div>
+    </div>-->
     </div>
     <script src="main.js"></script>
+    <script src="pdf.js"></script>
 </body>
 </html>
