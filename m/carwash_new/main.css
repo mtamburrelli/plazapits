@@ -10,6 +10,11 @@ html body{
 a {
     text-decoration: none; /* Removes underline */
     color: inherit; /* Uses parent element's color */
+
+}
+
+a:hover{
+    color: #ff3333;
 }
 
 nav {
@@ -174,6 +179,7 @@ nav {
         font-size: 1rem; /* Adjust font size for smaller screens */
         padding: 0 10px; /* Add padding for better readability */
     }
+
 }
 
 .pits-carwash{
@@ -181,9 +187,9 @@ nav {
     font-size: 1.5rem;
     margin-right: 42%;
     top: 1rem;
-    padding: 10px;
-    text-align: left;
-    justify-self: start; /* Aligns right */
+    padding: 15px;
+    justify-content: center; /* Aligns right */
+    align-items: center;
 
 }
 
@@ -192,10 +198,9 @@ nav {
     font-size: 1.5rem;
     top: 1rem;
     padding: 10px;
-    text-align: right;
     justify-self: end; /* Aligns right */
-
 }
+
 
 .pits-carwash-logo {
     width: 10rem; /* adjust as needed */
@@ -204,6 +209,8 @@ nav {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .pits-detailing {
@@ -213,20 +220,30 @@ nav {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.logo-container {
-    display: flex; /* Use Flexbox for alignment */
-    justify-content: space-around; /* Space logos evenly */
-    align-items: center; /* Center logos vertically */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    margin: 20px; /* Margin for spacing */
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-    transition: all 0.3s ease;
+    .logo-container {
+        display: flex;
+        justify-content: center; /* Horizontal centering */
+        align-items: center;     /* Vertical centering */
+        flex-direction: column;  /* Stack items vertically */
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+        margin: 0 auto;         /* Center the container itself */
+        transition: all 0.3s ease;
+    }
 
-}
+    .logo-container .pits-detailing{
+        transform: translate(-65%,); /* Center the element */
+
+    }
+
+    .logo-container .pits-carwash-logo{
+        transform: translate(-50%,); /* Center the element */
+    }
 
 
     .logo-container span {
@@ -236,17 +253,23 @@ nav {
         align-items: center; /* Center items vertically */
         padding: 15px; /* Optional padding */
         white-space: nowrap; /* Prevent wrapping */
+
     }
 
+@media (max-width:480px){
+    .logo-container{
+        display:flex;
+        align-items: center;
+
+    }
+}
 
     
     .pits-detailing:hover {
-        transform: scale(1.1);
         filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.7));
     }
     
     .pits-carwash-logo:hover{
-        transform: scale(1.1);
         filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.7));
     }
 
@@ -262,7 +285,7 @@ nav {
     }
     
 .left-side {
-    display: inline-block;
+    display: grid;
     gap: 2rem;
     width: 50%;
     padding: 1rem;
@@ -270,9 +293,9 @@ nav {
 }
 
 .inline-text {
-    display: inline-flex;
+    display: grid;
     align-items: center;
-    gap: 7px;
+    justify-items: center;
     color: #cf0029;
     gap: 10rem;
     padding: 2rem;
@@ -284,7 +307,7 @@ nav {
 
 /* If you need vertical alignment adjustments */
  .right-side {
-    display: inline-block;
+    display: grid;
     gap: 1rem;
     width: 50%;
     padding: 1rem;
@@ -309,7 +332,30 @@ nav {
     }
 
     .left-side {
-        width: 100%; /* Full width */
+        width: 50%; /* Full width */
+        padding: 1rem;
+        text-align: center; /* Center text */
+    }
+}
+@media (max-width: 768px) {
+    .right-side {
+        display: flex; /* Change to flex for better alignment */
+        flex-direction: column; /* Stack elements vertically */
+        width: 50%; /* Full width */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        padding: 1rem;
+        text-align: center; /* Center text */
+    }
+
+    .right-side span {
+        font-size: 1rem;
+        margin-inline-start: 0;
+        text-align: center; /* Center text */
+    }
+
+    .left-side {
+        width: 50%; /* Full width */
         padding: 1rem;
         text-align: center; /* Center text */
     }
@@ -398,13 +444,29 @@ Copy
 }
 
 .quienes-somos-text h1{
-    font-size: 4rem;
-    color: #cf0029;;
-    font-family: Allerta Stencil;
+    top: 20px;
     text-align: left;
-    padding-right: 50px;
+    padding-left: 50px;
+    color: #cf0029;
+    margin-bottom: 20px;
+    font-size: 4rem;
+    font-family: Allerta Stencil;
+    word-wrap: break-word; /* Allow text to wrap */
 }
 
+@media screen and (max-width: 480px){
+    .quienes-somos-text h1{
+        font-size: 2rem;
+        word-wrap: break-word;
+        padding-bottom: 1rem;
+        display: flex;
+        text-align: left;
+        padding-left: 50px; /* Adjust padding for smaller screens */
+        margin-right: 50px;
+    }
+}
+
+    
 .contact-section { 
     padding: 20px;
     position: relative;
@@ -531,28 +593,31 @@ Copy
     position: relative;
     overflow: hidden;
     padding: 2rem;
+    margin-left: 13px;
     align-content: center;
     align-items: center;
+    justify-content: center;
     background-color: #000000; /* Ensure container background is black */
   }
   
   /* Update the review cards to have a darker background */
   .review-card {
-    min-width: 80%; /* Make the cards smaller */
-    max-width: 80%; /* Ensure the cards don't exceed a certain width */
+    max-width: 55%; /* Ensure the cards don't exceed a certain width */
     background: #1a1a1a;
+    flex: 0 0 100%;
     padding: 2em; /* Adjust padding to make the cards smaller */
     border-left: 3px solid #ff3333;
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
-    margin: right 20px; ;
+    margin:  right 10px  left 20px;
 }
   
   .reviews-grid {
     display: flex;
     transition: transform 0.4s ease;
+    justify-content: center;
     font-family: Saira Stencil One, var(--default-font-family);
-    gap: 2rem; /* Adjust gap to make the cards closer together */
+    gap: 3rem; /* Adjust gap to make the cards closer together */
   }
   
   .rating {
@@ -617,16 +682,24 @@ Copy
   }
   
   .prev {
-    left: 10px; /* Adjusted for visibility */
+    left: 0; /* Adjusted for visibility */
   }
   
   .next {
     right: 10px; /* Adjusted for visibility */
   }
+
+  .arrow .next{
+    right: 5px;
+  }
+
+  .arrow .prev{
+    left: 5px;
+  }
   
   @media (max-width: 768px) {
     .review-card {
-        min-width: 100%; /* Ensure only one card is shown at a time */
+        min-width: 80%; /* Ensure only one card is shown at a time */
         max-width: 80%; /* Ensure the cards don't exceed a certain width */
     }
   }
@@ -1038,84 +1111,11 @@ Copy
 }
 
 
-.pdf-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90%;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 1000;
-    animation: fadeIn 0.2s ease;
-    overflow: hidden;
-    align-items: center;
-}
-
-    .pdf-modal-content {
-        position: relative;
-        max-width: 800px;
-        height: 90vh;
-        margin: 5vh auto;
-        background: white;
-        padding: 20px;
-        border-radius: 4px;
-
-}
-
-.pdf-modal-content button{
-    display: block;
-}
-
-.pdf-viewer-container {
-    position: relative;
-    width: 95%;
-    height: 95%;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.pdf-container {
-    flex: 1;
-    overflow: hidden;
-    background: #424242;
-}
-
-#viewer {
-    width: 80%;
-    height: auto;
-    margin: 20px auto;
-    border: 1px solid grey;
-    background: grey;
-}
-
-
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .pdf-toolbar {
-        padding: 8px;
-    }
-    
-    .toolbar-button {
-        padding: 6px;
-    }
-}
-
-.pdf-modal-content {
-    position: relative;
-    width: 90%;
-    height: 90%;
-    margin: 2% auto;
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 8px;
-}
 
 .close-button {
     display: none;
@@ -1161,30 +1161,24 @@ Copy
         border-radius: 0;
     }
     
+}}}
+
+.pdf-viewer-container {
+    display: none;
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the element */
+    z-index: 100000;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    width: 90vw; /* Increase width */
+    height: 90vh; /* Increase height */
 }
 
-
-
-/* CSS for visual feedback */
-.pdf-selector {
-    cursor: pointer;
-    transition: opacity 0.3s;
-    margin: 10px;
-  }
-  
-  .pdf-selector:hover {
-    opacity: 0.8;
-  }
-  
-  .active-pdf {
-    border: 2px solid #5d0303;
-
-    
-  }
-  #viewer {
-    width: 80%;
-    height: auto;
-    margin: 20px auto;
-    border: 1px solid grey;
-    background: grey;
+.pdf-viewer {
+    width: 100%; /* Adjust width to fit container */
+    height: 100%; /* Adjust height to fit container */
+    border: none;
 }

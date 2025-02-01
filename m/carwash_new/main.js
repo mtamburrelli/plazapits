@@ -3,122 +3,91 @@ document.querySelector('.ham-menu').addEventListener('click', function() {
   document.querySelector('.off-screen-menu').classList.toggle('active');
 });
 
+
 let currentSlide = 0;
 
 function slideReviews(direction) {
     const slider = document.querySelector('.reviews-grid');
     const cards = document.querySelectorAll('.review-card');
-    const cardsPerView = window.innerWidth <= 768 ? 1 : 2;
-    const totalSlides = Math.ceil(cards.length / cardsPerView);
+    const totalSlides = cards.length;
     
+    // Update current slide
     if (direction === 'next') {
         currentSlide = (currentSlide + 1) % totalSlides;
-    } else {
-        currentSlide = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+    } else if (direction === 'prev') {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
     }
     
-    const slideWidth = 100 / cardsPerView;
-    slider.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+    // Apply transform
+    const translation = -currentSlide * 100;
+    slider.style.transform = `translateX(${translation}%)`;
 }
 
-document.querySelector('.prev').addEventListener('click', () => slideReviews('prev'));
-document.querySelector('.next').addEventListener('click', () => slideReviews('next'));
+// Wait for DOM to be fully loaded before adding event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    const prevButton = document.querySelector('.arrow.prev');
+    const nextButton = document.querySelector('.arrow.next');
+    
+    if (prevButton) {
+        prevButton.addEventListener('click', () => slideReviews('prev'));
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('click', () => slideReviews('next'));
+    }
 
-// Reset position on window resize
-window.addEventListener('resize', () => {
-    currentSlide = 0;
-    document.querySelector('.reviews-grid').style.transform = 'translateX(0)';
+    // Reset position on window resize
+    window.addEventListener('resize', () => {
+        currentSlide = 0;
+        document.querySelector('.reviews-grid').style.transform = 'translateX(0)';
+    });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('toggleButton');
     const imageContainer = document.querySelector('.image-container');
-    
+
     // Store the initial images HTML
     const carWashImages = imageContainer.innerHTML;
-    
-    const detailingImages = `
-    <img src="/assets/images/pizzarella-logo.jpeg" class="responsive-image">
-    <img src="/assets/images/carro-carwash.png" class="responsive-image">
-    <img src="/hola.jpg" class="responsive-image">
-    <img src="/assets/images/6027.jpg" class="responsive-image">
-`;
 
-toggleButton.addEventListener('click', function() {
-    // Toggle button appearance
-    this.classList.toggle('option2');
-    
-    // Add fade effect
-    imageContainer.style.opacity = '0';
-    
-    // Wait for fade out, then change images
-    setTimeout(() => {
-        if (this.classList.contains('option2')) {
-            imageContainer.innerHTML = detailingImages;
-        } else {
-            imageContainer.innerHTML = carWashImages;
-        }
-        // Fade in new images
-        imageContainer.style.opacity = '1';
-    }, 300); // Match this with your CSS transition time
-});
+    // PDF URL for detailing
+    const detailingPdfUrl = "https://drive.google.com/file/d/15qHlPE8TS9e4FYv0AG6dg5AaGZrgwo8x/preview";
+
+    toggleButton.addEventListener('click', function () {
+        // Toggle button appearance
+        this.classList.toggle('option2');
+
+        // Add fade effect
+        imageContainer.style.opacity = '0';
+
+        // Wait for fade out, then change content
+        setTimeout(() => {
+            if (this.classList.contains('option2')) {
+                // Show PDF for detailing
+                imageContainer.innerHTML = ''; // Clear the container
+                createIframeWithContent(detailingPdfUrl, '640', '480', imageContainer);
+            } else {
+                // Show car wash images
+                imageContainer.innerHTML = carWashImages;
+            }
+            // Fade in new content
+            imageContainer.style.opacity = '1';
+        }, 300); // Match this with your CSS transition time
+    });
 });
 
-// Function to open the PDF viewer
-function openPdfViewer(pdfUrl) {
-    const container = document.getElementById('pdf-viewer-container');
-  
-    // Show the container
-    container.style.display = 'block';
-  
-    // Clear any previous content
-    container.innerHTML = '<button id="close-pdf-button">X</button>';
-  
-    // Initialize PDF.js and render the PDF
-    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
-      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-        pdf.getPage(pageNum).then(page => {
-          const scale = 1.5;
-          const viewport = page.getViewport({ scale });
-  
-          // Create a canvas element for the page
-          const canvas = document.createElement('canvas');
-          const context = canvas.getContext('2d');
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-  
-          // Render the page into the canvas
-          const renderContext = {
-            canvasContext: context,
-            viewport: viewport,
-          };
-          page.render(renderContext).promise.then(() => {
-            container.appendChild(canvas);
-          });
-        });
-      }
-    });
-  
-    // Add event listener for the close button
-    document.getElementById('close-pdf-button').addEventListener('click', function () {
-      container.style.display = 'none';
-    });
-  
-    // Add event listener for the Esc key
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        container.style.display = 'none';
-      }
-    });
-  }
-  
-  // Add event listeners for both buttons
-  document.getElementById('show-pdf-cw').addEventListener('click', function () {
-    const pdfUrl = this.getAttribute('data-pdf-url'); // Get PDF URL from data attribute
-    openPdfViewer(pdfUrl);
-  });
-  
-  document.getElementById('show-pdf-det').addEventListener('click', function () {
-    const pdfUrl = this.getAttribute('data-pdf-url'); // Get PDF URL from data attribute
-    openPdfViewer(pdfUrl);
-  });
+// Function to create an iframe with specific content
+function createIframeWithContent(contentUrl, width, height, container) {
+    const iframe = document.createElement('iframe');
+    iframe.src = contentUrl;
+    iframe.width = width || '100%'; // Default width if not provided
+    iframe.height = height || '100%'; // Default height if not provided
+    iframe.allow = 'autoplay'; // Allow autoplay if needed
+    iframe.style.border = 'none';
+
+
+    // Append the iframe to the specified container
+    container.appendChild(iframe);
+
+    return iframe; // Return the iframe element in case you need to manipulate it further
+}

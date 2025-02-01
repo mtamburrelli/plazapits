@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="main.css"/>
 </head>
 <body>
     <div class="banner">
@@ -56,28 +57,28 @@
                 <h1 class="servicios-title">Servicios y Paquetes</h1>
  
                 <div class="logo-container">
-                    <div class="image-text-container">
+                    <div class="image-text-container">                      
                         <div class="inline-text">
                             <div class="left-side">
-                                <div data-document-id="./assets/images/57f2f657b27937e08e248c6b9bbdaefaecac5689.png" class="pdf-selector">
-                                    <div id="show-pdf-cw" class="pits-carwash-logo"></div>      
-                                </div>                          
+                                <div id="show-pdf-cw" class="pits-carwash-logo" 
+                                    data-pdf="https://drive.google.com/file/d/1kCE1neSig6LEIAnhNJ1-faUZn8DieRS4/preview">
+                                </div>                                
                                 <span class="pits-carwash">
-                                    CAR WASH
+                                CAR WASH
                                 </span>
-                        
+                            </div>
 
                             <div class="right-side">
-                                <div data-document-id="./assets/images/ef6a47feffd8b518e8e9cc781c9b0a05060e007e.png" class="pdf-selector">
-                                <div id="show-pdf-det" class="pits-detailing"></div>
+                                <div id="show-pdf-det" class="pits-detailing" 
+                                    data-pdf="https://drive.google.com/file/d/15qHlPE8TS9e4FYv0AG6dg5AaGZrgwo8x/preview"></div>
                                 </div>
-                                </div>
-                                <span  class="pits-detailing-1">
-                                    DETAILING
+                                <span  class="pits-detailing-1" >
+                                DETAILING
                                 </span>
                                 </div>
                             </div>
                         </div>
+                </div>
 
 
                         <div class="toggle-container">
@@ -128,7 +129,7 @@
             </div>
             <h1 class="clients-title">Clientes</h1>
             <div class="reviews-container">
-                <button class="arrow prev" onclick="prevReview()">&#10094;</button>
+                <button class="arrow prev">❮</button>
                 <div class="reviews-grid">
                     <!-- Review 1 -->
                     <div class="review-card">
@@ -177,26 +178,18 @@
                             Los productos que utilizan son de primera calidad.
                         </p>
                     </div>
+                
                 </div>
-                <button class="arrow next" onclick="nextReview()">&#10095;</button>
+                <button class="arrow next">❯</button>
+
             </div>
         </div>
-    </div>
-
-    <div id="viewer" style="width: 100%; height: 500px;"></div>
-    <!--pdf-->
-    <!--<div id="pdf-modal" class="pdf-modal">
-        <div class="pdf-modal-content">
-            <span class="close-button">&times;</span>
-            <object 
-                id="pdf-viewer" 
-                type="application/pdf" 
-                width="100%" 
-                height="100%">
-            </object>
-        </div>
-    </div>-->
-    </div>
+        <div class="container">
+            <div id="pdfViewerContainer" class="pdf-viewer-container">
+                <iframe id="pdfViewer1" class="pdf-viewer" src="" width="640" height="480" allow="autoplay"></iframe>
+                <iframe id="pdfViewer2" class="pdf-viewer" src="" width="640" height="480" allow="autoplay"></iframe>
+                <iframe id="pdfViewer3" class="pdf-viewer" src="" width="640" height="480" allow="autoplay"></iframe>
+            </div>
     <script src="main.js"></script>
     <script src="pdf.js"></script>
 </body>

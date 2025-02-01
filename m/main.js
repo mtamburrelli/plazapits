@@ -5,11 +5,10 @@ class Gallery {
         this.progressBar = document.querySelector('.gallery-progress');
 
         this.images = [
-            'https://picsum.photos/1920/1080?random=1',
-            'https://picsum.photos/1920/1080?random=2',
-            'https://picsum.photos/1920/1080?random=3',
-            'https://picsum.photos/1920/1080?random=4',
-            'https://picsum.photos/1920/1080?random=5'
+            './assets/images/pits-gallery1.png',
+            './assets/images/pits-gallery2.png',
+            './assets/images/pits-gallery3.png',
+            './assets/images/pits-gallery4.png'
         ];
 
         this.currentIndex = 0;
@@ -24,6 +23,7 @@ class Gallery {
             const img = document.createElement('img');
             img.src = src;
             img.className = index === 0 ? 'active' : '';
+            img.style.width = '100%'; // Set the width to 100%
             this.galleryContainer.appendChild(img);
 
             // Create thumbnail
