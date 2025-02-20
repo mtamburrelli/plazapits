@@ -129,4 +129,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
+// Use intersection observer for lazy loading
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.src = entry.target.dataset.src;
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
+
     
