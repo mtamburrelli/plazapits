@@ -5,28 +5,37 @@ class Gallery {
         this.progressBar = document.querySelector('.gallery-progress');
         
         this.images = [
-            'https://picsum.photos/1920/1080?random=1',
-            'https://picsum.photos/1920/1080?random=2',
-            'https://picsum.photos/1920/1080?random=3',
-            'https://picsum.photos/1920/1080?random=4',
-            'https://picsum.photos/1920/1080?random=5'
+            './assets/images/pits-gallery1.png',
+            './assets/images/pits-gallery2.png',
+            './assets/images/pits-gallery3.png',
+            './assets/images/pits-gallery4.png'
         ];
         
         this.currentIndex = 0;
-        this.interval = 5000; // 5 seconds per image
-        this.init();
+        this.interval = 5000;
     }
 
-    init() {
-        // Create images and thumbnails
+    async init() {
+        // Create image loading promises
+        const loadPromises = this.images.map(src => {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = resolve;
+                img.onerror = resolve; // Handle errors too
+                img.src = src;
+            });
+        });
+
+        // Wait for all images to load
+        await Promise.all(loadPromises);
+        
+        // Now create DOM elements
         this.images.forEach((src, index) => {
-            // Create main image
             const img = document.createElement('img');
             img.src = src;
             img.className = index === 0 ? 'active' : '';
             this.galleryContainer.appendChild(img);
 
-            // Create thumbnail
             const thumb = document.createElement('div');
             thumb.className = `thumbnail ${index === 0 ? 'active' : ''}`;
             thumb.innerHTML = `<img src="${src}" alt="Thumbnail ${index + 1}">`;
@@ -34,10 +43,7 @@ class Gallery {
             this.thumbnailsContainer.appendChild(thumb);
         });
 
-        // Start automatic slideshow
         this.startSlideshow();
-
-        // Add hover pause/resume
         this.galleryContainer.addEventListener('mouseenter', () => this.pauseSlideshow());
         this.galleryContainer.addEventListener('mouseleave', () => this.startSlideshow());
     }
@@ -96,8 +102,31 @@ class Gallery {
     }
 }
 
-// Initialize gallery when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new Gallery();
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const loaderContainer = document.querySelector('.loader-container');
+    const mainContainer = document.querySelector('.main-container');
+
+    try {
+        const gallery = new Gallery();
+        
+        // Wait for both window load and gallery initialization
+        await Promise.all([
+            new Promise(resolve => window.addEventListener('load', resolve)),
+            gallery.init()
+        ]);
+    } catch (error) {
+        console.error('Error loading resources:', error);
+    } finally {
+        // Always hide loader when done
+        loaderContainer.style.display = 'none';
+        mainContainer.style.opacity = 1;
+    }
+
+    window.addEventListener('load', function() {
+        document.querySelector('.loader-container').style.display = 'none';
+        document.querySelector('.main-container').style.display = 'block';
+    });
 });
 
+    

@@ -119,11 +119,7 @@ button {
   transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
 }
 
-/*.sign-up-log-in:hover {
-  transform: scale(1.1); /* Grows the logo towards the viewer
-  opacity: 1;
-  filter: brightness(1.2);
-}*/
+
 
 .pits-carwash-logo {
   position: relative;
@@ -315,6 +311,32 @@ button {
   white-space: nowrap;
   letter-spacing: 0.96px;
   z-index: 16;
+}
+
+.whapp {
+  display: block;
+  position: relative;
+  height: 11px;
+  margin: 24px 0 0 82px;
+  color: #ffffff;
+  font-family: Saira Stencil One, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 11px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.96px;
+  z-index: 16;
+}
+
+.whapp:hover{
+  color: #880808;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .pic-4 {
@@ -757,3 +779,20 @@ button {
   }
 }
 
+/* Loading animation styles */
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #e40c0c90;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

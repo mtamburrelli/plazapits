@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Pits Car Wash</title>
+    <script src="../redirect.js"></script>
     <link rel="icon" href="./assets/images/icons/favicon-32x32.png" type="image/png"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@1,400;1,700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allerta+Stencil:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One:wght@400&display=swap" />
-    <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -188,8 +188,10 @@
             <div id="pdfViewerContainer" class="pdf-viewer-container">
                 <iframe id="pdfViewer1" class="pdf-viewer" src="" width="640" height="480" allow="autoplay"></iframe>
                 <iframe id="pdfViewer2" class="pdf-viewer" src="" width="640" height="480" allow="autoplay"></iframe>
-                <iframe id="pdfViewer3" class="pdf-viewer" src="" width="640" height="480" allow="autoplay"></iframe>
+                <button id="closeButton" class="close-button" onclick="closePDF()">X</button>
+
             </div>
+        </div>
     <script src="main.js"></script>
     <script src="pdf.js"></script>
 </body>

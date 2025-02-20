@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <script>
+    <script type="text/javascript">
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             // Handle login logic here
@@ -52,6 +52,10 @@
                 event.preventDefault();
             }
         }, { passive: false });
-    </script>
+
+if (screen.width <= 748) {
+    document.location = "m.plazapits.com";}
+
+</script>
 </body>
 </html>

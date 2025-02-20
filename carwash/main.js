@@ -1,5 +1,5 @@
 
-  const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         // Add 'visible' class when element is in view
         if (entry.isIntersecting) {
@@ -89,3 +89,11 @@ document.addEventListener('keydown', function (event) {
         });
     }
 });
+
+if (screen.width <= 748) {
+    document.location = "m.plazapits.com";
+    }
+
+if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+    location.replace("https://m.plazapits.com");
+    }

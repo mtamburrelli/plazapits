@@ -158,31 +158,37 @@ button {
 
 .main-container {
   position: relative;
-  
   width: 100%;  /* Change from fixed width to full width */
   min-height: 100vh;  /* Minimum height of viewport */
   min-width: 100vh;
   margin: 0 auto;
   background: #000000;
-  background-image: url("../assets/images/6027.jpg");
+  background-image: url(../assets/images/6027.jpg);
   background-size: cover;
   overflow-x: hidden;  /* Prevent horizontal scrolling */
   overflow-y: auto;   /* Allow vertical scrolling */
   align-items: center;
   justify-content: center;
 }
-.flex-row-c {
-  position: relative;
-  width: 1440px;
-  height: 343px;
-  margin: 681px 0 0 0;
-  z-index: 12;
+
+
+.servicios-title {
+  top: 20px;
+  left: 260px;
+  position: absolute;
+  color: #cf0029;
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-family: Saira Stencil One, var(--default-font-family);
+  z-index: 9;
 }
+
 .pits-carwash-logo {
   position: absolute;
   width: 309.4px;
   height: 204.4px;
-  top: 40px;
+  top: 180px;
   left: 325px;
   background: url(../assets/images/57f2f657b27937e08e248c6b9bbdaefaecac5689.png)
     no-repeat center;
@@ -200,7 +206,7 @@ button {
   position: absolute;
   width: 309.4px;
   height: 204.4px;
-  top: 40px;
+  top: 180px;
   left: 1011px;
   background: url(../assets/images/ef6a47feffd8b518e8e9cc781c9b0a05060e007e.png)
     no-repeat center;
@@ -214,11 +220,12 @@ button {
   opacity: 1;
   filter: brightness(1.2);
 }
+
 .rectangle {
   position: absolute;
   min-width: 1650px;
-  height: 314px;
-  top: 29px;
+  height: 473px;
+  top: 40px;
   left: 0;
   background: #000000;
   z-index: 6;
@@ -230,7 +237,7 @@ button {
   position: absolute;
   width: 148px;
   height: 38px;
-  top: 287px;
+  top: 397px;
   left: 403px;
   color: #ffffff;
   font-family: Allerta Stencil, var(--default-font-family);
@@ -248,7 +255,7 @@ button {
   position: absolute;
   width: 148px;
   height: 38px;
-  top: 287px;
+  top: 397px;
   left: 1088px;
   color: #ffffff;
   font-family: Allerta Stencil, var(--default-font-family);
@@ -288,19 +295,28 @@ button {
   font-family: Saira Stencil One, var(--default-font-family);
 }
 
+.image-container {
+  width: 1650px;
+  height: 1000px;
+  margin: 170px 0 0 0;
+  display: flex;
+  justify-content: center; /* Optional: adds space between the images */
+  background-color: rgb(0, 0, 0); /* Optional: for visibility of the container */
+  opacity: 0.90;
+}
 
-/* .pits-carwash-logo-nobg:hover {
-  transform: scale(1.1); Grows the logo towards the viewer 
-  opacity: 1;
-  filter: brightness(1.2);
-}*/
-
+.image-container img {
+  width: 20%;  /* Each image takes up a portion of the container */
+  height: auto; /* Maintain aspect ratio */
+  margin: 7px;
+  object-fit: contain; /* Ensures image fits without being stretched */
+}
 
 .rectangle-2 {
   position: absolute;
   filter: brightness(1);
   width: 1650px;
-  height: 355px;
+  height: 385px;
   top: 0;
   left: 0;
   background: url(../assets/images/close-up-fragile-foam-bubbles_23-2147798007.jpg)
@@ -309,27 +325,38 @@ button {
   opacity: 1;
 }
 
+
+.flex-row-c {
+  position: relative;
+  width: 1650px;
+  height: 343px;
+  left: 0;
+  margin: 800px 0 0 0px;
+  z-index: 12;
+  opacity: 0.90;
+}
+
 .flex-row {
   position: absolute;
-  width: 1312.5px;
-  height: 300px;
-  top: 354px;
-  left: 2.5px;
+  width: 1650px;
+  height: 400px;
+  top: 385px;
+  left: 0px;
   z-index: 5;
 }
 
 .quienes-somos {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: left ;
   position: absolute;
-  width: 386px;
+  width: auto;
   height: 79px;
-  top: 21px;
-  left: 628.5px;
-  color: #ffffff;
+  top: 61px;
+  left: 263px;
+  color: #cf0029;
   font-family: Saira Stencil One, var(--default-font-family);
-  font-size: 32px;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 33.886px;
   text-align: center;
@@ -343,8 +370,8 @@ button {
   position: absolute;
   width: 1191px;
   height: 213px;
-  top: 87px;
-  left: 221.5px;
+  top: 147px;
+  left: 221px;
   color: #ffffff;
   font-size: 20px;
   line-height: 24px;
@@ -355,36 +382,39 @@ button {
   font-style: normal;
   }
 
-.rectangle-4 {
-  position: absolute;
-  width: 1650px;
-  height: 355px;
-  top: 355px;
-  left: 0;
-  background: url(../assets/images/269f83bf4b7bb0cb1082e85b0a2b1e4cedf0a558.png)
-    no-repeat center;
-  background-size: cover;
-  opacity: 0.90;
-  z-index: 2;
-}
+.rectangle-3 {
+    position: absolute;
+    width: 1650px;
+    height: 455px;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.90;
+    z-index: 2;
+  }
 
-.contact-section {
+.contact-section { 
+  padding: 40px;
+  position: relative;
   background-color: black;
   color: white;
   left: 0;
-  padding: 20px;
   text-align: left;
   font-family: Saira Stencil One, var(--default-font-family);
+  margin: 0px 0 0 0;
+  height: 400px;
   width: 1650px;
+  opacity: 1;
 }
 
 .contact-title {
+  height: 120px;
   position: relative;
-  left: 180px;
+  left: 220px;
   color: #cf0029;
   text-align: left;
   margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: Saira Stencil One, var(--default-font-family);
 }
 
@@ -475,17 +505,20 @@ button {
 
 #clientes-sec {
   background-color: #000000;
+  height: 650px;
   width: 1650px;
   padding: 2rem 0;
   position: relative;
 }
 
 .section-title {
+  height: 120px;
+  position: relative;
+  left: 0px;
+  color: #cf0029;
+  margin-bottom: 20px;
+  font-size: 3rem;
   font-family: Saira Stencil One, var(--default-font-family);
-  font-size: 2rem;
-  color: #ff3333;
-  margin-bottom: 3rem;
-  text-align: center; /* Center the title */
 }
 
 .reviews-container {
@@ -589,14 +622,6 @@ button {
   body {
       padding: 1rem;
   }
-}
-
-.contact-section {
-  background-color: black;
-  color: white;
-  padding: 40px;
-  position: relative;
-  font-family: Saira Stencil One, var(--default-font-family);
 }
 
 .contact-details {
@@ -732,3 +757,4 @@ button {
     height: 75vh; /* Reduce height further for very small devices */
   }
 }
+
